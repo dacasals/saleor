@@ -37,7 +37,7 @@ var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
   names: 'vendor'
 });
 
-//var occurenceOrderPlugin = new webpack.optimize.OccurenceOrderPlugin();
+var occurrenceOrderPlugin = new webpack.optimize.OccurrenceOrderPlugin();
 
 var environmentPlugin = new webpack.DefinePlugin({
   'process.env': {
@@ -113,7 +113,8 @@ var config = {
     environmentPlugin,
     extractTextPlugin,
     providePlugin,
-    faviconsWebpackPlugin
+    faviconsWebpackPlugin,
+    occurrenceOrderPlugin,
   ],
   postcss: function() {
     return [autoprefixer];
@@ -125,6 +126,9 @@ var config = {
       'react-dom': resolve('node_modules/react-dom/dist/react-dom.min.js')
     }
   },
+  sassLoader: {
+    sourceMap: true
+  }
 };
 
 module.exports = config;
