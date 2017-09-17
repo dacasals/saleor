@@ -7,7 +7,7 @@ RUN \
   apt-get -y update && \
   apt-get install -y gettext nodejs build-essential yarn && \
   apt-get clean
-RUN npm i webpack@^1.13.2 -g
+RUN npm i webpack@^1.13.2
 ADD requirements.txt /app/
 ADD package.json /app/
 RUN pip install -r /app/requirements.txt
