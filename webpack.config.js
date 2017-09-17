@@ -37,11 +37,11 @@ var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
   names: 'vendor'
 });
 
-var occurrenceOrderPlugin = new webpack.optimize.OccurrenceOrderPlugin();
+var occurenceOrderPlugin = new webpack.optimize.OccurrenceOrderPlugin();
 
 var environmentPlugin = new webpack.DefinePlugin({
   'process.env': {
-    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'Seelopment')
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
   }
 });
 
@@ -77,7 +77,7 @@ var config = {
   },
   output: output,
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -112,9 +112,9 @@ var config = {
     commonsChunkPlugin,
     environmentPlugin,
     extractTextPlugin,
+    occurenceOrderPlugin,
     providePlugin,
-    faviconsWebpackPlugin,
-    occurrenceOrderPlugin,
+    faviconsWebpackPlugin
   ],
   postcss: function() {
     return [autoprefixer];
