@@ -37,7 +37,7 @@ var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
   names: 'vendor'
 });
 
-var occurenceOrderPlugin = new webpack.optimize.OccurenceOrderPlugin();
+//var occurenceOrderPlugin = new webpack.optimize.OccurenceOrderPlugin();
 
 var environmentPlugin = new webpack.DefinePlugin({
   'process.env': {
