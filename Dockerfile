@@ -16,7 +16,7 @@ WORKDIR /app
 #RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 
 RUN export PATH="$HOME/.yarn/bin:$PATH"
-RUN yarn -v
+RUN yarn
 RUN yarn run build-assets
 EXPOSE 8000
 ENV PORT 8000
