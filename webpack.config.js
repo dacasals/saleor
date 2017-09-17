@@ -41,7 +41,7 @@ var commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
 
 var environmentPlugin = new webpack.DefinePlugin({
   'process.env': {
-    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'Seelopment')
   }
 });
 
@@ -77,7 +77,7 @@ var config = {
   },
   output: output,
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -125,9 +125,6 @@ var config = {
       'react-dom': resolve('node_modules/react-dom/dist/react-dom.min.js')
     }
   },
-  sassLoader: {
-    sourceMap: true
-  }
 };
 
 module.exports = config;
