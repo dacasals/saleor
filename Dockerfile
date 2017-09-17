@@ -1,9 +1,11 @@
 FROM python:3.5
 ENV PYTHONUNBUFFERED 1
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 RUN \
   apt-get -y update && \
-  apt-get install -y gettext nodejs build-essential && \
+  apt-get install -y gettext nodejs build-essential yarn && \
   apt-get clean 
 RUN npm i webpack -g
 ADD requirements.txt /app/
@@ -12,9 +14,6 @@ RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
 #RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update && sudo apt-get install yarn
 
 RUN export PATH="$HOME/.yarn/bin:$PATH"
 RUN yarn -v
