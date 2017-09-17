@@ -6,8 +6,8 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN \
   apt-get -y update && \
   apt-get install -y gettext nodejs build-essential yarn && \
-  apt-get clean 
-RUN npm i webpack -g
+  apt-get clean
+RUN npm i webpack@^1.13.2 -g
 ADD requirements.txt /app/
 ADD package.json /app/
 RUN pip install -r /app/requirements.txt
