@@ -12,6 +12,8 @@ RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN export PATH="$HOME/.yarn/bin:$PATH"
+RUN yarn -v
 RUN yarn add webpack
 RUN yarn run build-assets
 EXPOSE 8000
