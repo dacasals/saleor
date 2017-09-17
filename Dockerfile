@@ -1,6 +1,6 @@
 FROM python:3.5
 ENV PYTHONUNBUFFERED 1
-RUN curl -sL https://deb.nodesource.com/setup_6.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x
 RUN \
   apt-get -y update && \
   apt-get install -y gettext curl wget nodejs  nodejs-legacy && \
