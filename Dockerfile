@@ -12,8 +12,8 @@ ADD package.json /app/
 RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
-RUN yarn add webpack
 RUN yarn self-update
+RUN yarn add webpack
 RUN yarn run build-assets
 EXPOSE 8000
 ENV PORT 8000
