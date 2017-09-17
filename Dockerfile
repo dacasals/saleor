@@ -1,9 +1,9 @@
 FROM python:3.5
 ENV PYTHONUNBUFFERED 1
-RUN curl -sL https://deb.nodesource.com/setup_6.x
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN \
   apt-get -y update && \
-  apt-get install -y gettext curl wget nodejs  nodejs-legacy && \
+  apt-get install -y gettext curl wget nodejs build-essential nodejs-legacy && \
   apt-get clean 
 RUN npm i webpack -g
 npm i yarn -g
