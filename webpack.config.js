@@ -112,7 +112,7 @@ var config = {
     commonsChunkPlugin,
     environmentPlugin,
     extractTextPlugin,
-    occurenceOrderPlugin,
+    OccurrenceOrderPlugin,
     providePlugin,
     faviconsWebpackPlugin
   ],
