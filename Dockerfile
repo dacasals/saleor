@@ -11,7 +11,7 @@ ADD package.json /app/
 RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
-curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 RUN yarn add webpack
 RUN yarn run build-assets
 EXPOSE 8000
