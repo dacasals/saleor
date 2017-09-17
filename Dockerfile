@@ -6,13 +6,12 @@ RUN \
   apt-get install -y gettext nodejs build-essential && \
   apt-get clean 
 RUN npm i webpack -g
-RUN npm i yarn -g
 ADD requirements.txt /app/
 ADD package.json /app/
 RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
-RUN yarn self-update
+curl -o- -L https://yarnpkg.com/install.sh | bash
 RUN yarn add webpack
 RUN yarn run build-assets
 EXPOSE 8000
