@@ -11,7 +11,11 @@ ADD package.json /app/
 RUN pip install -r /app/requirements.txt
 ADD . /app
 WORKDIR /app
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+#RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && sudo apt-get install yarn
+
 RUN export PATH="$HOME/.yarn/bin:$PATH"
 RUN yarn -v
 RUN yarn add webpack
