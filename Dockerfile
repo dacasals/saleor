@@ -17,7 +17,6 @@ WORKDIR /app
 
 RUN export PATH="$HOME/.yarn/bin:$PATH"
 RUN yarn -v
-RUN yarn add webpack
 RUN yarn run build-assets
 EXPOSE 8000
 ENV PORT 8000
