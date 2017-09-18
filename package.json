@@ -41,7 +41,9 @@
     "tether": "^1.4.0",
     "underscore": "^1.8.3",
     "webpack": "^1.13.2",
-        "webpack-bundle-tracker": "0.2.0"
+        "webpack-bundle-tracker": "0.2.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+
 
   },
   "devDependencies": {
