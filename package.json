@@ -14,7 +14,7 @@
   "homepage": "http://getsaleor.com/",
   "engines": {
     "node": "6.x",
-    "yarn": "*"
+    "yarn": "0.20.x"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
