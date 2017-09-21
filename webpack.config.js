@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   output = {
     path: resolve('saleor/static/assets/'),
     filename: '[name].[chunkhash].js',
-    publicPath: 'http://yoyisales.herokuapp.com/assets/'
+    publicPath: 'http://yoyisales.herokuapp.com/static/assets/'
   };
   fileLoaderPath = 'file?name=[name].[hash].[ext]';
   extractTextPlugin = new ExtractTextPlugin('[name].[contenthash].css');
